@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fbfbfd;
+  --ink: #1d1d1f;
+  --ink-soft: #6e6e73;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    var(--font-inter), "Segoe UI", "PingFang TC", "Microsoft JhengHei",
+    "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.022em;
+  color: #1d1d1f;
+}
+
+@layer components {
+  /* === Apple-style pill buttons === */
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-pill px-5 py-2.5
+           text-[13px] font-medium leading-none
+           transition-all duration-200 active:scale-[0.97]
+           disabled:opacity-40 disabled:pointer-events-none select-none
+           whitespace-nowrap;
+  }
+  .btn-primary {
+    /* near-black — Apple's most common CTA */
+    @apply btn bg-brand-500 text-white hover:bg-brand-600;
+  }
+  .btn-accent {
+    /* Apple Blue — used for "featured" actions */
+    @apply btn bg-accent text-white hover:bg-accent-hover;
+  }
+  .btn-outline {
+    @apply btn bg-transparent text-brand-500 border border-black/15 hover:bg-black/[0.03];
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-brand-500 hover:bg-black/[0.05];
+  }
+  .btn-danger-ghost {
+    @apply btn bg-transparent text-danger hover:bg-danger-soft border border-transparent;
+  }
+  .btn-sm { @apply px-3.5 py-1.5 text-[12px]; }
+  .btn-lg { @apply px-7 py-3 text-[15px]; }
+
+  /* === Cards (Apple product-card flavor) === */
+  .card {
+    @apply bg-white rounded-card shadow-card;
+  }
+  .card-flat {
+    @apply bg-white rounded-card ring-1 ring-black/[0.06];
+  }
+
+  /* === Form inputs (bigger, rounder, minimal) === */
+  .input {
+    @apply w-full rounded-xl border border-black/[0.12] bg-white px-4 py-2.5
+           text-[14px] text-ink placeholder:text-ink-mute
+           focus:outline-none focus:ring-4 focus:ring-accent/15
+           focus:border-accent transition;
+  }
+  .label {
+    @apply block text-[12px] font-medium text-ink-soft mb-1.5;
+  }
+
+  /* === Badges (minimal — colored dot + text) === */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-[11px]
+           font-medium text-ink;
+  }
+  .badge::before {
+    content: "";
+    @apply inline-block w-1.5 h-1.5 rounded-full bg-current opacity-80;
+  }
+
+  /* Section divider (hairline) */
+  .hairline { @apply border-t border-black/[0.08]; }
+}
+
+/* Scrollbar — hair-thin Apple style */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+  background-clip: padding-box;
+  border: 3px solid transparent;
+}
+
+/* Subtle native-feel focus ring */
+:focus-visible {
+  outline: none;
+}
