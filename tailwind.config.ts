@@ -86,8 +86,10 @@ const config: Config = {
         pop: "0 20px 40px -12px rgba(0,0,0,0.18), 0 0 0 0.5px rgba(0,0,0,0.06)",
       },
       fontSize: {
-        hero: ["48px", { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "700" }],
-        display: ["34px", { lineHeight: "1.1", letterSpacing: "-0.022em", fontWeight: "700" }],
+        hero: ["40px", { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "700" }],
+        "hero-lg": ["56px", { lineHeight: "1.05", letterSpacing: "-0.028em", fontWeight: "700" }],
+        display: ["26px", { lineHeight: "1.15", letterSpacing: "-0.022em", fontWeight: "700" }],
+        "display-lg": ["34px", { lineHeight: "1.1", letterSpacing: "-0.022em", fontWeight: "700" }],
       },
     },
   },

@@ -43,7 +43,7 @@ export default async function CampaignsPage({
   });
 
   return (
-    <div className="px-10 py-12 max-w-6xl">
+    <div className="px-5 py-8 md:px-10 md:py-12 max-w-6xl">
       <PageHeader
         title="頁配案件"
         subtitle={`共 ${rows.length} 件`}
@@ -83,7 +83,8 @@ export default async function CampaignsPage({
             還沒有案件，按「新增案件」建立第一個
           </div>
         ) : (
-          <table className="w-full text-[13px]">
+          <div className="overflow-x-auto">
+          <table className="w-full text-[13px] min-w-[760px]">
             <thead>
               <tr className="text-[11px] text-ink-soft border-b border-black/[0.08]">
                 <th className="text-left px-6 py-3 font-medium">案名</th>
@@ -148,6 +149,7 @@ export default async function CampaignsPage({
               })}
             </tbody>
           </table>
+          </div>
         )}
       </div>
     </div>

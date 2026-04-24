@@ -17,7 +17,7 @@ export default async function EditCampaignPage({
   if (!c || c.userId !== userId) notFound();
 
   return (
-    <div className="p-8 max-w-3xl">
+    <div className="px-5 py-8 md:px-10 md:py-12 max-w-3xl">
       <PageHeader title="編輯案件" subtitle={c.title} />
       <CampaignForm
         initial={{

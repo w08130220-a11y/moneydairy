@@ -10,7 +10,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <SessionProvider session={session}>
-      <div className="flex min-h-screen">
+      <div className="md:flex min-h-screen">
         <Sidebar userName={name} />
         <main className="flex-1 min-w-0">{children}</main>
       </div>

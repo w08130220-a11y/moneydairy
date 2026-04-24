@@ -75,7 +75,7 @@ export default async function DashboardPage() {
   }
 
   return (
-    <div className="px-10 py-12 max-w-6xl">
+    <div className="px-5 py-8 md:px-10 md:py-12 max-w-6xl">
       <PageHeader
         title={`${now.getMonth() + 1} 月總覽`}
         subtitle={`${now.getFullYear()} 年 · 本月收支、待收款、即將截止`}
@@ -87,9 +87,9 @@ export default async function DashboardPage() {
       />
 
       {/* Hero — net profit anchors the page */}
-      <div className="mb-14">
+      <div className="mb-12 md:mb-14">
         <div className="text-[13px] text-ink-soft mb-3">本月淨利</div>
-        <div className={`text-hero ${monthNet >= 0 ? "text-ink" : "text-danger"}`}>
+        <div className={`text-hero md:text-hero-lg ${monthNet >= 0 ? "text-ink" : "text-danger"}`}>
           {formatTWD(monthNet)}
         </div>
         <div className="text-[14px] text-ink-soft mt-2">
@@ -98,7 +98,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Stat row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 md:gap-10 mb-12 md:mb-14">
         <Stat label="本月收入" value={formatTWD(monthRevenue)} tone="income" />
         <Stat label="本月支出" value={formatTWD(monthExpense)} tone="expense" />
         <Stat label="進行中" value={`${active.length}`} hint={`共 ${campaigns.length} 件`} />
@@ -106,7 +106,7 @@ export default async function DashboardPage() {
       </div>
 
       {/* Monthly trend chart — answers "這個月賺多少" at a glance */}
-      <div className="card p-8 mb-8">
+      <div className="card p-5 md:p-8 mb-8">
         <MonthlyChart data={monthly} />
       </div>
 

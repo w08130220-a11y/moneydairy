@@ -169,7 +169,8 @@ export function ExpenseManager({
       {expenses.length === 0 ? (
         <div className="p-16 text-center text-[13px] text-ink-mute">還沒有支出記錄</div>
       ) : (
-        <table className="w-full text-[13px]">
+        <div className="overflow-x-auto">
+        <table className="w-full text-[13px] min-w-[640px]">
           <thead>
             <tr className="text-[11px] text-ink-soft border-b border-black/[0.08]">
               <th className="text-left px-6 py-3 font-medium">日期</th>
@@ -224,6 +225,7 @@ export function ExpenseManager({
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );

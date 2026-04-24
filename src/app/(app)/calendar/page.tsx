@@ -14,7 +14,7 @@ export default async function CalendarPage() {
   });
 
   return (
-    <div className="p-8 max-w-[1400px]">
+    <div className="px-5 py-8 md:px-10 md:py-12 max-w-[1400px]">
       <PageHeader
         title="行事曆"
         subtitle="月曆檢視每天的案件、時間軸檢視整月排程"

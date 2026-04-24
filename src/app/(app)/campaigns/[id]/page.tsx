@@ -36,7 +36,7 @@ export default async function CampaignDetailPage({
   const net = campaign.revenue - totalExpense;
 
   return (
-    <div className="px-10 py-12 max-w-5xl">
+    <div className="px-5 py-8 md:px-10 md:py-12 max-w-5xl">
       <PageHeader
         title={campaign.title}
         subtitle={`${campaign.vendor} · ${campaign.platform}`}
@@ -66,9 +66,9 @@ export default async function CampaignDetailPage({
       </div>
 
       {/* Typography-led hero — net profit anchors the page */}
-      <div className="mb-14">
+      <div className="mb-12 md:mb-14">
         <div className="text-[13px] text-ink-soft mb-3">淨利</div>
-        <div className={`text-hero ${net >= 0 ? "text-ink" : "text-danger"}`}>
+        <div className={`text-hero md:text-hero-lg ${net >= 0 ? "text-ink" : "text-danger"}`}>
           {formatTWD(net)}
         </div>
         <div className="text-[14px] text-ink-soft mt-2">
@@ -77,7 +77,7 @@ export default async function CampaignDetailPage({
       </div>
 
       {/* Stat row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-8 md:gap-10 mb-12 md:mb-14">
         <Stat label="頁配收入" value={formatTWD(campaign.revenue)} tone="income" />
         <Stat label="總支出" value={formatTWD(totalExpense)} tone="expense" />
         <Stat label="接到案子" value={fmt(campaign.startDate)} small />
@@ -90,7 +90,7 @@ export default async function CampaignDetailPage({
       </div>
 
       {/* Secondary timeline row */}
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-10 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-x-6 gap-y-8 md:gap-10 mb-10 md:mb-12">
         <Stat label="實際上架" value={fmt(campaign.postedDate)} small />
         <Stat label="收款日" value={fmt(campaign.paidDate)} small />
       </div>
